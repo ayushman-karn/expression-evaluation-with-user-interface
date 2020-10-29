@@ -1,96 +1,73 @@
 {
   let result = document.getElementById("res");
-  let btn0 = document.getElementById("b0");
-  let btn1 = document.getElementById("b1");
-  let btn2 = document.getElementById("b2");
-  let btn3 = document.getElementById("b3");
-  let btn4 = document.getElementById("b4");
-  let btn5 = document.getElementById("b5");
-  let btn6 = document.getElementById("b6");
-  let btn7 = document.getElementById("b7");
-  let btn8 = document.getElementById("b8");
-  let btn9 = document.getElementById("b9");
-  let btnClr = document.getElementById("bdel");
-  let btnEql = document.getElementById("bequal");
-  let btnPlus = document.getElementById("bplus");
-  let btnMinus = document.getElementById("bminus");
-  let btnMul = document.getElementById("bmul");
-  let btnDiv = document.getElementById("bdiv");
 
-  btn0.onclick = () => {
-    result.textContent += "0";
-  };
+  let buttons = document.querySelector(".ono");
+  for (let i = 0; i < 16; i++)
+    buttons.children[i].addEventListener("click", func);
 
-  btn1.onclick = () => {
-    result.textContent += "1";
-  };
-
-  btn2.onclick = () => {
-    result.textContent += "2";
-  };
-
-  btn3.onclick = () => {
-    result.textContent += "3";
-  };
-
-  btn4.onclick = () => {
-    result.textContent += "4";
-  };
-
-  btn5.onclick = () => {
-    result.textContent += "5";
-  };
-
-  btn6.onclick = () => {
-    result.textContent += "6";
-  };
-
-  btn7.onclick = () => {
-    result.textContent += "7";
-  };
-
-  btn8.onclick = () => {
-    result.textContent += "8";
-  };
-
-  btn9.onclick = () => {
-    result.textContent += "9";
-  };
-
-  btnPlus.onclick = () => {
-    result.textContent += "+";
-  };
-
-  btnMinus.onclick = () => {
-    result.textContent += "-";
-  };
-
-  btnMul.onclick = () => {
-    result.textContent += "*";
-  };
-
-  btnDiv.onclick = () => {
-    result.textContent += "/";
-  };
-
-  btnClr.onclick = () => {
-    result.textContent = result.textContent.slice(0, -1);
-  };
-
-  btnEql.onclick = () => {
-    let exp = result.textContent;
-    console.log(exp);
-    if (/\./g.test(exp)) {
-      result.textContent = "@_@ CAN'T COMPUTE!";
-      setTimeout(() => {
-        result.textContent = "";
-      }, 3000);
-      return;
+  function func() {
+    switch (this.textContent) {
+      case "0":
+        result.textContent += "0";
+        break;
+      case "1":
+        result.textContent += "1";
+        break;
+      case "2":
+        result.textContent += "2";
+        break;
+      case "3":
+        result.textContent += "3";
+        break;
+      case "4":
+        result.textContent += "4";
+        break;
+      case "5":
+        result.textContent += "5";
+        break;
+      case "6":
+        result.textContent += "6";
+        break;
+      case "7":
+        result.textContent += "7";
+        break;
+      case "8":
+        result.textContent += "8";
+        break;
+      case "9":
+        result.textContent += "9";
+        break;
+      case "+":
+        result.textContent += "+";
+        break;
+      case "-":
+        result.textContent += "-";
+        break;
+      case "*":
+        result.textContent += "*";
+        break;
+      case "/":
+        result.textContent += "/";
+        break;
+      case "X":
+        result.textContent = result.textContent.slice(0, -1);
+        break;
+      case "=":
+        let exp = result.textContent;
+        console.log(exp);
+        if (/\./g.test(exp)) {
+          result.textContent = "@_@ CAN'T COMPUTE!";
+          setTimeout(() => {
+            result.textContent = "";
+          }, 3000);
+          return;
+        }
+        let postfix = infixToPostfix(exp);
+        console.log(postfix);
+        result.textContent = evalPostfix(postfix);
+        break;
     }
-    let postfix = infixToPostfix(exp);
-    console.log(postfix);
-    result.textContent = evalPostfix(postfix);
-  };
+  }
 
   function infixToPostfix(exp) {
     let a = exp.match(/([\+-/\*]|[0-9]+)/g);
