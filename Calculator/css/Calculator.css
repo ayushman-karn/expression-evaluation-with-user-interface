@@ -1,0 +1,47 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, black, grey);
+}
+
+#res {
+  width: 22rem;
+  height: 4.4rem;
+  font-size: 1.6rem;
+  margin: auto;
+  margin-top: 24vh;
+  overflow-wrap: break-word;
+  background-color: darkgrey;
+  color: white;
+  box-sizing: content-box;
+  border: solid slategrey 0.2rem;
+}
+
+.ono {
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  margin-top: 0.2rem;
+  width: 22rem;
+  box-sizing: content-box;
+  border: solid slategrey 0.2rem;
+}
+
+.ono button {
+  font-size: 1.6rem;
+  width: 5.5rem;
+  height: 4rem;
+  background-color: slategray;
+  color: white;
+}
+
+#bplus,
+#bminus,
+#bmul,
+#bdiv {
+  color: cyan;
+}
