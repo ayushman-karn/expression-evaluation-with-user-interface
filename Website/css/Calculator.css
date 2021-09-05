@@ -5,10 +5,15 @@
 }
 
 body {
-  background: linear-gradient(to right, black, grey);
+  background: linear-gradient(to right, rgb(0, 195, 255), rgb(255, 0, 234));
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 #res {
+  transform: rotateY(2.5deg) rotateX(20deg);
+  transform-style: preserve-3d;
   width: 22rem;
   height: 4.4rem;
   font-size: 1.6rem;
@@ -18,25 +23,30 @@ body {
   background-color: darkgrey;
   color: white;
   box-sizing: content-box;
-  border: solid slategrey 0.2rem;
+  border: none;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.4);
 }
 
 .ono {
+  transform: rotateY(2.5deg) rotateX(20deg);
   display: flex;
   flex-wrap: wrap;
   margin: auto;
   margin-top: 0.2rem;
   width: 22rem;
   box-sizing: content-box;
-  border: solid slategrey 0.2rem;
+  border: none;
+  box-shadow: 0px 20px 20px rgba(0, 0, 0, 0.4), 0px 0px 50px rgba(0, 0, 0, 0.4);
 }
 
 .ono button {
+  transform-style: preserve-3d;
   font-size: 1.6rem;
   width: 5.5rem;
   height: 4rem;
   background-color: slategray;
   color: white;
+  cursor: pointer;
 }
 
 #bplus,
@@ -44,4 +54,10 @@ body {
 #bmul,
 #bdiv {
   color: cyan;
+}
+
+.container {
+  perspective: 1000px;
+  width: 55rem;
+  height: 40rem;
 }

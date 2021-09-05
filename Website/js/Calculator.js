@@ -135,4 +135,22 @@
         return q / p;
     }
   }
+
+  // let container = document.querySelector(".container");
+
+  // container.addEventListener("mousemove", (e) => {
+  //   buttons.style.transition = "0s";
+  //   result.style.transition = "0s";
+  //   let x = (window.innerWidth / 2 - e.clientX) / 7;
+  //   let y = (window.innerHeight / 2 - e.clientY) / 7;
+  //   buttons.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+  //   result.style.transform = `rotateY(${x}deg) rotateX(${y}deg)`;
+  // });
+
+  // container.addEventListener("mouseout", () => {
+  //   buttons.style.transition = "0.5s";
+  //   result.style.transition = "0.5s";
+  //   buttons.style.transform = `rotateY(${0}deg) rotateX(${0}deg)`;
+  //   result.style.transform = `rotateY(${0}deg) rotateX(${0}deg)`;
+  // });
 }
