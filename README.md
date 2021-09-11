@@ -1,13 +1,13 @@
 ## Calculator
 
-![screen shot](/SS/ss1.png)
+![screen shot](/SS/ss5.png)
 
 ## Implementation
 * First coverting the given infix expression to postfix.
 * Then evaluating the obtained postfix expression.
 * For convenience js regex is also used.
 
-![screen shot](/SS/ss2.png)
+![screen shot](/SS/ss6.png)
 
 ### Built With
 
